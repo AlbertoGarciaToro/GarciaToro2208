@@ -1,12 +1,22 @@
-public class Automovil {
-    private String marca;
-    private int modelo;
-    private int numCaballos;
+public class Automovil extends Vehiculo {
+    protected String marca;
+    protected String modelo;
+    protected int año;
 
-    public Automovil(String marca, int modelo, int numCaballos) {
+    public Automovil() {
+    }
+
+    public Automovil(String marca, String modelo, int año) {
         this.marca = marca;
         this.modelo = modelo;
-        this.numCaballos = numCaballos;
+        this.año = año;
+    }
+
+    public Automovil(String tipoCategoria, String tipoMotor, int autonomiaKm, String marca, String modelo, int año) {
+        super(tipoCategoria, tipoMotor, autonomiaKm);
+        this.marca = marca;
+        this.modelo = modelo;
+        this.año = año;
     }
 
     public String getMarca() {
@@ -17,28 +27,39 @@ public class Automovil {
         this.marca = marca;
     }
 
-    public int getModelo() {
+    public String getModelo() {
         return modelo;
     }
 
-    public void setModelo(int modelo) {
+    public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
-    public int getNumCaballos() {
-        return numCaballos;
+    public int getAño() {
+        return año;
     }
 
-    public void setNumCaballos(int numCaballos) {
-        this.numCaballos = numCaballos;
+    public void setAño(int año) {
+        this.año = año;
     }
 
     @Override
     public String toString() {
         return "Automovil{" +
                 "marca='" + marca + '\'' +
-                ", modelo=" + modelo +
-                ", numCaballos=" + numCaballos +
+                ", modelo='" + modelo + '\'' +
+                ", año=" + año +
+                ", tipoCategoria='" + tipoCategoria + '\'' +
+                ", tipoMotor='" + tipoMotor + '\'' +
+                ", autonomiaKm=" + autonomiaKm +
                 '}';
     }
+    public void acelerar(){
+        System.out.println("El autmovil esta acelerando");
+    }
+    public void frenar(){
+        System.out.println("El automovil esta frenando");
+    }
+
 }
+
